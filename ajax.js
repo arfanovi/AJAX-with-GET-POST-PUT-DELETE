@@ -5,7 +5,7 @@
         // DELETE request : Delete data   
 
     // GET 
-    
+    /*
     const req = new XMLHttpRequest();
 
     req.open('GET', 'https://reqres.in/api/users');
@@ -25,7 +25,27 @@
         }
     })
     req.send();
-    
+    */
 
 
-  
+    // POST 
+
+    const newUser = {
+        name: "ARfan H Ovi",
+        phone: '01717700926',
+
+    }
+    const req = new XMLHttpRequest();
+
+    req.open('POST', 'https://reqres.in/api/users')
+    req.setRequestHeader('Content-Type', 'application/json')
+
+    req.addEventListener('load', function(){
+        if (req.status === 201 && req.readyState === 4 ){
+            const res = JSON.parse(req.responseText);
+            console.log(res)
+        } else {
+            throw new Error("Bad Send")
+        }
+    })
+    req.send(JSON.stringify(newUser));
