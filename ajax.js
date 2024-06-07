@@ -54,6 +54,8 @@
 
 
     // PUT 
+
+    /*
     const newUser = {
         name: "Ovi",
         study: "GUB",
@@ -74,3 +76,22 @@
     })
 
     req.send(JSON.stringify(newUser))
+    */
+
+
+    // DELETE 
+    const req = new XMLHttpRequest();
+    req.open('DELETE', 'https://reqres.in/api/users/2');
+
+
+
+    req.addEventListener('load', function() {
+        if (req.status === 204 && req.readyState === 4) {
+            
+            console.log("Request Success")
+        } else {
+            throw new Error('Bad PUT')
+        }
+    })
+
+    req.send();
