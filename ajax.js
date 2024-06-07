@@ -30,6 +30,7 @@
 
     // POST 
 
+    /*
     const newUser = {
         name: "ARfan H Ovi",
         phone: '01717700926',
@@ -49,3 +50,27 @@
         }
     })
     req.send(JSON.stringify(newUser));
+    */
+
+
+    // PUT 
+    const newUser = {
+        name: "Ovi",
+        study: "GUB",
+    }
+
+    const req = new XMLHttpRequest();
+    req.open('PUT', 'https://reqres.in/api/users/2');
+
+    req.setRequestHeader('Content-Type', 'application/json');
+
+    req.addEventListener('load', function() {
+        if (req.status === 200 && req.readyState === 4) {
+            const res = JSON.parse(req.responseText);
+            console.log(res)
+        } else {
+            throw new Error('Bad PUT')
+        }
+    })
+
+    req.send(JSON.stringify(newUser))
