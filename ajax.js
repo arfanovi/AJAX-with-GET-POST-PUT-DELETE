@@ -5,7 +5,7 @@
         // DELETE request : Delete data   
 
     // GET 
-    /*
+    
     const req = new XMLHttpRequest();
 
     req.open('GET', 'https://reqres.in/api/users');
@@ -25,12 +25,12 @@
         }
     })
     req.send();
-    */
+    
 
 
     // POST 
 
-    /*
+    
     const newUser = {
         name: "ARfan H Ovi",
         phone: '01717700926',
@@ -55,7 +55,7 @@
 
     // PUT 
 
-    /*
+    
     const newUser = {
         name: "Ovi",
         study: "GUB",
@@ -76,7 +76,7 @@
     })
 
     req.send(JSON.stringify(newUser))
-    */
+    
 
 
     // DELETE 
